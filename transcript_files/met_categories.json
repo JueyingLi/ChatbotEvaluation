@@ -1,0 +1,43 @@
+{
+  "period": [
+    "Period",
+    "Dynasty",
+    "Reign",
+    "ObjectDate",
+    "ObjectBeginDate",
+    "ObjectEndDate"
+  ],
+  "geography": [
+    "Geography Type",
+    "City",
+    "State",
+    "County",
+    "Country",
+    "Region",
+    "Subregion",
+    "Locale",
+    "Locus",
+    "Excavation",
+    "River"
+  ],
+  "visual_features": [
+    "Medium",
+    "Dimensions"
+  ],
+  "function_context": [
+    "Culture",
+    "Classification"
+  ],
+  "architecture": [
+    "Medium",
+    "Dimension",
+    "Culture"
+  ],
+  "artist": [
+    "artistRole",
+    "artistDisplayName",
+    "artistDisplayBio",
+    "artistGender"
+  ],
+  "historical_figures": []
+}
