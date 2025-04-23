@@ -3,13 +3,13 @@ import streamlit as st
 
 def get_keys():
     # On Streamlit Cloud, use st.secrets
-    if "SUPABASE_KEY" in st.secrets:
+    try:
         return {
             "OPENAI_API_KEY": st.secrets.get("OPENAI_API_KEY"),
             "SUPABASE_KEY": st.secrets.get("SUPABASE_KEY"),
             "DIFY_API_KEY": st.secrets.get("DIFY_API_KEY"),
         }
-    else:
+    except Exception:
         # Locally, use .env
         from dotenv import load_dotenv
         load_dotenv()

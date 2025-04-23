@@ -19,4 +19,4 @@ def render_eval_block_object(eval_obj, eval_criteria):
                 with score_col:
                     st.write(f"**Score:** {eval_obj.ratings[i]}")
                 with fb_col:
-                    st.write(f"**Feedback:** {eval_obj.feedbacks[i]}")
+                    st.write(eval_obj.feedbacks[i])
