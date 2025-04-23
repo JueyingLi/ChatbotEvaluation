@@ -47,12 +47,12 @@ class DifyConnector:
             }
         else:
             self.payload["conversation_id"] = self.conversation_id
+            self.payload["query"] = query
 
         res = requests.post(self.dify_api_url + "chat-messages", headers=self.headers, json=self.payload, verify=False)
         self.round += 1
         res_json = res.json()
         self.conversation_id = res_json.get("conversation_id")
-        print(res_json)
         if res_json["answer"]:
             return safe_json_parse(res_json["answer"])["output"]
         return "No response"
@@ -60,5 +60,5 @@ class DifyConnector:
     def ask_initial_question(self):
         return self._post_to_dify("Introduce this artifact.")
 
-    def ask_follow_up(self, question):
-        return self._post_to_dify(question)
+    def ask_follow_up(self, question, previous_questions):
+        return self._post_to_dify(question, memory = previous_questions)

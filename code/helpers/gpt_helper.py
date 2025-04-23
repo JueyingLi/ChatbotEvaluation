@@ -11,7 +11,6 @@ def connect_to_gpt(system_prompt, text, model_name="gpt-4o-mini"):
             {"role": "user", "content": text}
         ]
     )
-    #print(response)
     return response.choices[0].message.content.strip()
 
 #print(connect_to_gpt("test", "test"))
